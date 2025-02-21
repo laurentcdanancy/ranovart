@@ -1,0 +1,40 @@
+.slider {
+    background: white;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+    height: 300px;
+    /* Ajuster la hauteur de la fenêtre de défilement */
+    margin: auto;
+    overflow: hidden;
+    /* Masquer l'excédent de contenu */
+    position: relative;
+    width: 200px;
+    height: 800px;
+    /* Largeur de la fenêtre */
+}
+
+.slide-track {
+    display: flex;
+    flex-direction: column;
+    /* Alignement vertical des images */
+    animation: scroll 10s linear infinite;
+    /* Animation de défilement */
+}
+
+.slide {
+    height: 200px;
+    /* Hauteur des images */
+    width: 150px;
+    /* Largeur des images */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-600px);
+    }
+
+    /* Défiler jusqu'à la fin de la liste */
+}

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StartArtisan Élégance</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            width: 80%;
+            /* Largeur à 80% */
+            margin: 0 auto;
+            /* Centre horizontalement le body */
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            /* Aligne les éléments en haut du header */
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em 2em;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: flex-start;
+            /* Aligne le contenu du logo en haut */
+            background-color: #2E7D32;
+            padding: 2em 0.5em;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            /* Police pour le nom de l'entreprise */
+            font-size: 2em;
+            font-weight: bold;
+            margin: 0;
+            color: white;
+            padding: 0;
+        }
+
+        .slogan-container {
+            flex: 2;
+            text-align: center;
+        }
+
+        header p {
+            padding-top: 40px;
+            font-family: 'Arial', serif;
+            /* Police pour le slogan */
+            font-size: 2em;
+            margin: 0.2em 0;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            /* Largeur du container à 100% pour occuper tout l'espace dans body */
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #2196F3;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+
+        .left-side,
+        .right-side {
+            width: 15%;
+            /* Ajuste la largeur des sections latérales */
+            background-color: #f4f4f4;
+            padding: 1em;
+        }
+
+        .left-side {
+            margin-right: 1em;
+            /* Ajoute une marge à droite pour séparer des produits */
+        }
+
+        .right-side {
+            margin-left: 1em;
+            /* Ajoute une marge à gauche pour séparer des produits */
+        }
+
+        .product-grid {
+            width: 70%;
+            /* Ajuste la largeur de la grille de produits pour s'adapter aux sections latérales */
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1em;
+            padding: 1em;
+            justify-items: center;
+            align-items: start;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 1em;
+            border-radius: 8px;
+            text-align: center;
+            width: 323px;
+            /* height: 323523px 597 563;*/
+            /*photo height: 289*289; 289*367; 289*335*/
+            position: relative;
+            /* Pour verrouiller la taille */
+            overflow: hidden;
+            /* Empêche le dépassement de contenu */
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .product-card h2 {
+            margin-top: 0;
+        }
+
+        .product-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .product-card .price {
+            font-weight: bold;
+            color: #ff0000;
+            /* Couleur rouge pour le prix */
+            font-size: 1.2em;
+            /* Taille de police légèrement plus grande pour plus de visibilité */
+        }
+
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 2em;
+        }
+    </style>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+
+
+        .topnav {
+            overflow: hidden;
+            background-color: black;
+            margin-top: 0;
+            /* Ajuste la marge pour coller au header */
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #2196F3;
+            color: white;
+        }
+
+        .topnav .search-container {
+            float: right;
+        }
+
+        .topnav input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+        }
+
+        .topnav .search-container button {
+            float: right;
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: #ddd;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .topnav .search-container button:hover {
+            background: #ccc;
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav .search-container {
+                float: none;
+            }
+
+            .topnav a,
+            .topnav input[type=text],
+            .topnav .search-container button {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                padding: 14px;
+            }
+
+            .topnav input[type=text] {
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="brand-name">StartArtisan Élégance</div>
+        </div>
+        <div class="slogan-container">
+            <p>Bienvenue chez StartArtisan Élégance</p>
+            <p>Qualité et savoir-faire Au service des Particuliers " Gagnant - Gagnant "</p>
+        </div>
+    </header>
+    <div class="topnav">
+        <a href="index.html">Accueil</a>
+        <a href="about.html">À propos</a>
+        <a href="fenetre.html">Fenêtres</a>
+        <a href="portes.html">Portes</a>
+        <a href="tutoriel.html">Tutoriels</a>
+        <a href="contact.html">Contact</a>
+        <div class="search-container">
+            <form action="/action_page.php"> <input type="text" placeholder="Search.." name="search"> <button
+                    type="submit"><i class="fa fa-search"></i>search </button> </form>
+        </div>
+    </div>
+    <h1>Les Portes </h1>
+    <hr>
+    <div class="container">
+        <aside class="left-side">
+            <!-- Contenu de la section gauche -->
+        </aside>
+
+        <main class="product-grid">
+
+            <!-- Cartes produits -->
+            <div class="product-card">
+                <img src="img/fenetre/fenetre-alu-1.jpg" alt="Fenêtre Bois">
+                <h2>Fenêtre Aluminium</h2>
+                <p>Introduction du produit.</p>
+                <ul>
+                    <li>Taille: 120cm x 140cm</li>
+                    <li>Longueur: 120cm</li>
+                    <li>Largeur: 140cm</li>
+                </ul>
+                <p class="price">Prix: 500€</p>
+            </div>
+            <div class="product-card">
+                <img src="img/fenetre/fenetre-alu-1.jpg" alt="Fenêtre PVC">
+                <h2>Fenêtre Aluminium</h2>
+                <p>Introduction du produit.</p>
+                <ul>
+                    <li>Taille: 100cm x 120cm</li>
+                    <li>Longueur: 100cm</li>
+                    <li>Largeur: 120cm</li>
+                </ul>
+                <p class="price">Prix: 400€</p>
+            </div>
+            <div class="product-card">
+                <img src="img/fenetre/fenetre-alu-1.jpg" alt="Fenêtre Aluminium">
+                <h2>Fenêtre Aluminium</h2>
+                <p>Introduction du produit.</p>
+                <ul>
+                    <li>Taille: 110cm x 130cm</li>
+                    <li>Longueur: 110cm</li>
+                    <li>Largeur: 130cm</li>
+                </ul>
+                <p class="price">Prix: 600€</p>
+            </div>
+            <div class="product-card">
+                <img src="img/fenetre/fenetre-bois-1.jpg" alt="Porte Bois">
+                <h2>Fenêtre Bois</h2>
+                <p>Introduction du produit.</p>
+                <ul>
+                    <li>Taille: 200cm x 90cm</li>
+                    <li>Longueur: 200cm</li>
+                    <li>Largeur: 90cm</li>
+                </ul>
+                <p class="price">Prix: 700€</p>
+            </div>
+            <div class="product-card">
+                <img src="img/fenetre/fenetre-bois-1.jpg" alt="Porte PVC">
+                <h2>Fenêtre Bois</h2>
+                <p>Introduction du produit.</p>
+                <ul>
+                    <li>Taille: 190cm x 85cm</li>
+                    <li>Longueur: 190cm</li>
+                    <li>Largeur: 85cm</li>
+                </ul>
+                <p class="price">Prix: 650€</p>
+            </div>
+            <div class="product-card">
+                <img src="img/fenetre/fenetre-bois-1.jpg" alt="Porte Aluminium">
+                <h2>Fenêtre Bois</h2>
+                <p>Introduction du produit.</p>
+                <ul>
+                    <li>Taille: 200cm x 95cm</li>
+                    <li>Longueur: 200cm</li>
+                    <li>Largeur: 95cm</li>
+                </ul>
+                <p class="price">Prix: 800€</p>
+            </div>
+            <div class="product-card">
+                <img src="img/fenetre/fenetre-pvc-1.jpg" alt="Volet Bois">
+                <h2>Fenêtre PVC</h2>
+                <p>Introduction du produit.</p>
+                <ul>
+                    <li>Taille: 150cm x 50cm</li>
+                    <li>Longueur: 150cm</li>
+                    <li>Largeur: 50cm</li>
+                </ul>
+                <p class="price">Prix: 300€</p>
+            </div>
+            <div class="product-card">
+                <img src="img/fenetre/fenetre-pvc-1.jpg" alt="Volet PVC">
+                <h2>Fenêtre PVC</h2>
+                <p>Introduction du produit.</p>
+                <ul>
+                    <li>Taille: 140cm x 55cm</li>
+                    <li>Longueur: 140cm</li>
+                    <li>Largeur: 55cm</li>
+                </ul>
+                <p class="price">Prix: 350€</p>
+            </div>
+            <div class="product-card">
+                <img src="img/fenetre/fenetre-pvc-1.jpg" alt="Volet Aluminium">
+                <h2>Fenêtre PVC</h2>
+                <p>Introduction du produit.</p>
+                <ul>
+                    <li>Taille: 160cm x 60cm</li>
+                    <li>Longueur: 160cm</li>
+                    <li>Largeur: 60cm</li>
+                </ul>
+                <p class="price">Prix: 400€</p>
+            </div>
+        </main>
+        <aside class="right-side">
+            <!-- Contenu de la section droite -->
+        </aside>
+    </div>
+    <footer>
+        <p>© 2025 StartArtisan Élégance. Tous droits réservés.</p>
+        <p>Contact: info@startartisan-elegance.fr</p>
+    </footer>
+    <script src="scripts.js"></script>
+    <script>
+        // Ajoute des fonctionnalités JavaScript ici si nécessaire
+
+        // Exemple : Afficher une alerte lors du clic sur une carte produit
+        document.addEventListener('DOMContentLoaded', () => {
+            const productCards = document.querySelectorAll('.product-card');
+
+            productCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    alert(`Vous avez cliqué sur ${card.querySelector('h2').innerText}`);
+                });
+            });
+        });
+    </script>
+    <script>
+        window.onload = function () {
+            setActiveLink();
+        };
+
+        function setActiveLink() {
+            var navbar = document.querySelector('.topnav');
+            var links = navbar.getElementsByTagName('a');
+            var currentUrl = window.location.href;
+
+            for (var i = 0; i < links.length; i++) {
+                if (links[i].href === currentUrl) {
+                    links[i].classList.add('active');
+                } else {
+                    links[i].classList.remove('active');
+                }
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

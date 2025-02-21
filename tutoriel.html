@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutoriels</title>
+    <link rel="stylesheet" href="style-header.css">
+    <link rel="stylesheet" href="style-nav.css">
+    <link rel="stylesheet" href="style-videotranscription.css">
+    <style>
+        iframe {
+            background: url('https://upload.wikimedia.org/wikipedia/commons/7/75/YouTube_social_white_squircle_%282017%29.svg') no-repeat center;
+            background-size: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="brand-name">StartArtisan Élégance</div>
+        </div>
+        <div class="slogan-container">
+            <p>Bienvenue chez StartArtisan Élégance</p>
+            <p>Qualité et savoir-faire au service des Particuliers " Gagnant - Gagnant "</p>
+        </div>
+    </header>
+
+    <div class="topnav">
+        <a href="index.html">Accueil</a>
+        <a href="videoyoutube.html">À propos</a>
+        <a href="fenetre.html">Fenêtres</a>
+        <a href="portes.html">Portes</a>
+        <a class="active" href="tutoriel.html">Tutoriels</a>
+        <a href="contact.html">Contact</a>
+        <div class="search-container">
+            <form action="/search">
+                <input type="text" placeholder="Recherche..." name="search">
+                <button type="submit">Recherche</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="videoyoutube">
+        <h1>Tutoriels</h1>
+        <div class="tutorial-container">
+            <select id="tutorialDropdown" name="tutorialDropdown" aria-label="Sélectionnez un tutoriel"
+                onchange="loadTutorial()">
+                <option value="https://www.youtube.com/embed/logo-placeholder"> Sélectionnez un tutoriel</option>
+                <option value="https://www.youtube.com/embed/dtpeRkQt56E">1 Voile Banché</option>
+                <option value="https://www.youtube.com/embed/aJCNvcNE-5c">2 Escalier droit</option>
+                <option value="https://www.youtube.com/embed/ly5GJ54qEg4">3 Maçonnerie joints épais</option>
+                <option value="https://www.youtube.com/embed/fcyFtpGs3_M">4 Réseau de canalisations</option>
+                <option value="https://www.youtube.com/embed/6On9Jg-1D_Q">5 Blocs à bancher</option>
+                <option value="https://www.youtube.com/embed/5SMBS9S5YFo">6 Plancher poutrelle hourdis</option>
+                <option value="https://www.youtube.com/embed/qq9tzAlUuwA">7 Appui de fenêtre</option>
+                <option value="https://www.youtube.com/embed/XiNru1ZGtdU">8 Réaliser une implantation</option>
+                <option value="https://www.youtube.com/embed/jxX5hTYhDbM">9 Fondations sur massifs-longrines</option>
+                <option value="https://www.youtube.com/embed/tS2pkCt99oE">10 Fondation sur radier</option>
+                <option value="https://www.youtube.com/embed/wDldusVoziU">11 Enduit Traditionnel</option>
+                <option value="https://www.youtube.com/embed/6Aw26UrbzJY">12 Semelles Filantes</option>
+                <option value="https://www.youtube.com/embed/TPeZXPlOq9U">13 Plancher à dalles alvéolées</option>
+                <option value="https://www.youtube.com/embed/fJhShDFZ5N0">14 Maçonnerie joints minces</option>
+                <option value="https://www.youtube.com/embed/HSP-j8MUfU4">15 Mortier de recette</option>
+                <option value="https://www.youtube.com/embed/x7VvTHd4e1Y">16 Dallage</option>
+                <option value="https://www.youtube.com/embed/r9rgz3U3BRo">17 Ouvrage en prémurs</option>
+                <option value="https://www.youtube.com/embed/kpNbZLv820E">18 Plancher Prédalle</option>
+                <option value="https://www.youtube.com/embed/JqYnK-5oPYA">19 Mélange béton</option>
+                <option value="https://www.youtube.com/embed/B09UfnghlAU">20 Plancher coulé en place</option>
+                <option value="https://www.youtube.com/embed/rdfmd7RUUzo">21 Briques de parement</option>
+                <option value="https://www.youtube.com/embed/aifyaMHjMTY">22 Maçonnerie en pierre de taille</option>
+                <option value="https://www.youtube.com/embed/5zXMLo3cVg0">23 Plateforme pour dallage</option>
+                <option value="https://www.youtube.com/embed/2KXNEqPUy9M">24 Mur en pierres-maçonnées</option>
+                <option value="https://www.youtube.com/embed/j023I650j08">25 fondation puit sur pieux</option>
+                <option value="https://www.youtube.com/embed/1x7JWDcNtAc">26 fondation sur dallage</option>
+                <option value="https://www.youtube.com/embed/JFdah1tiomw">27 fondations et réseaux enterrés</option>
+                <option value="https://www.youtube.com/embed/IxFdHqQdLQA">28 fondations et choix du système</option>
+                <option value="https://www.youtube.com/embed/c2Y41mgibPI">29 fondations et soutènement et rigoles
+                </option>
+                <option value="https://www.youtube.com/embed/PVCOaMJd_E8">30 fondations sur semelles ou radier</option>
+                <option value="https://www.youtube.com/embed/39Jv7qpQapc">31 Faire un plan de passerelles</option>
+                <option value="https://www.youtube.com/embed/4644b_yhuv4">32 Faire un plan d'implantation de bâtiment
+                </option>
+                <option value="https://www.youtube.com/embed/2e8eHmomFgg">33 Calculer le budget de main d'oeuvre d'un
+                    chantier
+                </option>
+                <option value="https://www.youtube.com/embed/mjypcjHty6k">34 Faire un plan d'installation de chantier
+                </option>
+                <option value="https://www.youtube.com/embed/qLbSKATj3yQ">35 Faire un planning de BTP sur Microsoft
+                    Project
+                </option>
+                <option value="https://www.youtube.com/embed/kkB0SX1mkwQ">36 Calculer une saturation de grue
+                </option>
+                <option value="https://www.youtube.com/embed/2G8rOlRKm0c">37 Faire une rotation de banches pour un
+                    chantier
+                </option>
+                <option value="https://www.youtube.com/embed/c2styzmgRjM">38 Établir un mode opératoire
+                </option>
+                <option value="https://www.youtube.com/embed/AJCwxjGkzJI">39 Faire un examen d'adéquation de grue
+                </option>
+                <option value="https://www.youtube.com/embed/qzZusBY1cJ8">40 Le BIM pour vos chantiers
+                </option>
+
+
+        </div>
+        </select>
+
+        <div class="video-frame">
+            <!-- Initialisation avec le lien par défaut -->
+            <iframe id="tutorialVideo" width="860" height="515" src="https://www.youtube.com/embed/logo-placeholder"
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen aria-label="Tutoriel Vidéo"></iframe>
+        </div>
+
+
+    </div>
+    </div>
+
+    <footer>
+        <p>© 2025 StartArtisan Élégance. Tous droits réservés.</p>
+        <p>Contact: info@startartisan-elegance.fr</p>
+    </footer>
+
+    <script>
+        function loadTutorial() {
+            var videoUrl = document.getElementById("tutorialDropdown").value;
+            document.getElementById("tutorialVideo").src = videoUrl;
+        }
+    </script>
+</body>
+
+</html>

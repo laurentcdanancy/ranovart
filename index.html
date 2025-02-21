@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StartArtisan Élégance</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            width: 80%;
+            /* Largeur à 80% */
+            margin: 0 auto;
+            /* Centre horizontalement le body */
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            /* Aligne les éléments en haut du header */
+            background-color: #4caf50;
+            color: white;
+            padding: 1em 2em;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: flex-start;
+            /* Aligne le contenu du logo en haut */
+            background-color: #2e7d32;
+            padding: 2em 0.5em;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        .brand-name {
+            font-family: "Playfair Display", serif;
+            /* Police pour le nom de l'entreprise */
+            font-size: 2em;
+            font-weight: bold;
+            margin: 0;
+            color: white;
+            padding: 0;
+        }
+
+        .slogan-container {
+            flex: 2;
+            text-align: center;
+        }
+
+        header p {
+            padding-top: 40px;
+            font-family: "Arial", serif;
+            /* Police pour le slogan */
+            font-size: 2em;
+            margin: 0.2em 0;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            /* Largeur du container à 100% pour occuper tout l'espace dans body */
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #2196f3;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        ul.circle {
+            list-style-type: circle;
+            margin: 20px;
+            padding: 10px;
+        }
+
+        .product-card ul.circle {
+            list-style-type: circle;
+            color: #000408;
+            margin-left: 50px;
+        }
+
+        .product-card ul.circle li {
+            padding-bottom: 5px;
+            /* Ajoute un padding (espace intérieur) de 5px en bas de chaque élément */
+        }
+
+        .product-card ul.circle li {
+            margin-bottom: 10px;
+            /* Ajoute un espace de 10px entre chaque élément de la liste */
+        }
+
+        .left-side,
+        .right-side {
+            width: 15%;
+            /* Ajuste la largeur des sections latérales */
+            background-color: #f4f4f4;
+            padding: 1em;
+        }
+
+        .left-side {
+            margin-right: 1em;
+            /* Ajoute une marge à droite pour séparer des produits */
+        }
+
+        .right-side {
+            margin-left: 1em;
+            /* Ajoute une marge à gauche pour séparer des produits */
+        }
+
+        .product-grid {
+            width: 70%;
+            /* Ajuste la largeur de la grille de produits pour s'adapter aux sections latérales */
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1em;
+            padding: 1em;
+            justify-items: center;
+            align-items: start;
+        }
+
+        .product-card {
+            width: 800px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 1em;
+            border-radius: 8px;
+            /* text-align: center;*/
+            position: relative;
+            /* Pour verrouiller la taille */
+            overflow: hidden;
+            /* Empêche le dépassement de contenu */
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .product-card h2 {
+            margin-top: 0;
+        }
+
+        .product-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .product-card .price {
+            font-weight: bold;
+            color: #ff0000;
+            /* Couleur rouge pour le prix */
+            font-size: 1.2em;
+            /* Taille de police légèrement plus grande pour plus de visibilité */
+        }
+
+        footer {
+            background-color: #4caf50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 2em;
+        }
+    </style>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: black;
+            margin-top: 0;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #2196f3;
+            color: white;
+        }
+
+        .topnav .search-container {
+            float: right;
+        }
+
+        .topnav input[type="text"] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+        }
+
+        .topnav .search-container button {
+            float: right;
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: #ddd;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .topnav .search-container button:hover {
+            background: #ccc;
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav .search-container {
+                float: none;
+            }
+
+            .topnav a,
+            .topnav input[type="text"],
+            .topnav .search-container button {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                padding: 14px;
+            }
+
+            .topnav input[type="text"] {
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+
+
+
+    <style>
+        .slider {
+            background: white;
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+            height: 300px;
+            /* Ajuster la hauteur de l="img/fenetre/fenêtre de défilement */
+            margin: auto;
+            overflow: hidden;
+            /* Masquer l'excédent de contenu */
+            position: relative;
+            width: 200px;
+            height: 1400px;
+            /* Largeur de l="img/fenetre/fenêtre */
+        }
+
+        .slide-track {
+            display: flex;
+            flex-direction: column;
+            /* Alignement vertical des images */
+            animation: scroll 80s linear infinite;
+            /* Animation de défilement */
+        }
+
+        .slide {
+            height: 200px;
+            /* Hauteur des images */
+            width: 150px;
+            /* Largeur des images */
+        }
+
+        @keyframes scroll {
+            50% {
+                transform: translateY(1000px);
+            }
+
+            50% {
+                transform: translateY(-1000px);
+            }
+
+            /* Défiler jusqu'à la fin de la liste */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="brand-name">StartArtisan Élégance</div>
+        </div>
+        <div class="slogan-container">
+            <p>Bienvenue chez StartArtisan Élégance</p>
+            <p>
+                Qualité et savoir-faire Au service des Particuliers " Gagnant -
+                Gagnant "
+            </p>
+        </div>
+    </header>
+    <div class="topnav">
+        <a class="active" href="index.html">Accueil</a>
+        <a href="about.html">À propos</a>
+        <a href="fenetre.html">Fenêtres</a>
+        <a href="portes.html">Portes</a>
+        <a href="tutoriel.html">Tutoriels</a>
+        <a href="contact.html">Contact</a>
+        <div class="search-container">
+            <form action="/action_page.php"> <input type="text" placeholder="Search.." name="search"> <button
+                    type="submit"><i class="fa fa-search"></i>search </button> </form>
+        </div>
+    </div>
+    <h1>Accueil</h1>
+    <hr />
+
+    <div class="container">
+        <aside class="left-side">
+            <!-- Contenu de la section gauche -->
+            <!-- carousel fin -->
+            <h2>Produit :</h2>
+            <div class="slider">
+
+                <div class="slide-track">
+                    <p>Aluminium</p>
+                    <div class="slide">
+                        <img src="img/fenetre/fenetre-alu-1.jpg" height="200" width="200" alt="" />
+                    </div>
+                    <p>Aluminium</p>
+                    <div class="slide">
+                        <img src="img/fenetre/fenetre-alu-2.jpg" height="200" width="200" alt="" />
+                    </div>
+                    <p>Aluminium</p>
+                    <div class="slide">
+                        <img src="img/fenetre/fenetre-alu-3.jpg" height="200" width="200" alt="" />
+                    </div>
+                    <p>Bois</p>
+                    <div class="slide">
+                        <img src="img/fenetre/fenetre-bois-1.jpg" height="200" width="200" alt="" />
+                    </div>
+                    <p>Bois</p>
+                    <div class="slide">
+                        <img src="img/fenetre/fenetre-bois-2.jpg" height="200" width="200" alt="" />
+                    </div>
+                    <p>Bois</p>
+                    <div class="slide">
+                        <img src="img/fenetre/fenetre-bois-3.jpg" height="200" width="200" alt="" />
+                    </div>
+                    <p>PVC</p>
+                    <div class="slide">
+                        <img src="img/fenetre/fenetre-pvc-1.jpg" height="200" width="200" alt="" />
+                    </div>
+                    <p>PVC</p>
+                    <div class="slide">
+                        <img src="img/fenetre/fenetre-pvc-2.jpg" height="200" width="200" alt="" />
+                    </div>
+                    <p>PVC</p>
+                    <div class="slide">
+                        <img src="img/fenetre/fenetre-pvc-3.jpg" height="200" width="200" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img src="img/fenetre/fenetre-alu-1.jpg" height="200" width="200" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img src="img/fenetre/fenetre-alu-1.jpg" height="200" width="200" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img src="img/fenetre/fenetre-alu-1.jpg" height="200" width="200" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img src="img/fenetre/fenetre-alu-1.jpg" height="200" width="200" alt="" />
+                    </div>
+                    <div class="slide">
+                        <img src="img/fenetre/fenetre-alu-1.jpg" height="200" width="200" alt="" />
+                    </div>
+                </div>
+            </div>
+            <!-- carousel fin -->
+        </aside>
+
+        <main class="product-grid">
+            <!-- Cartes produits -->
+            <div class="product-card">
+                <h1>Bienvenue chez : StartArtisan Elégance</h1>
+                <p>
+                    Nous proposons une large gamme de services dans le domaine de la
+                    menuiserie : installation, rénovation, et bien plus encore.
+                </p>
+                <p>
+                    Explorez notre site pour découvrir tous nos services et trouver la
+                    solution adaptée à vos besoins.
+                </p>
+            </div>
+            <div class="product-card">
+                <h2>Nos services principaux :</h2>
+                <ul class="circle">
+                    <li>Installation de menuiserie</li>
+                    <li>Rénovation</li>
+                    <li>Services complémentaires</li>
+                </ul>
+            </div>
+            <div class="product-card">
+                <h2>Type Fenêtre et Porte</h2>
+                <ul class="circle">
+                    <li>Aluminium</li>
+                    <li>Bois</li>
+                    <li>Pvc</li>
+                </ul>
+                <img src="img/fenetre/fenetre-alu-1.jpg" alt="img/fenetre/Fenêtre Aluminium" />
+            </div>
+        </main>
+        <aside class="right-side">
+            <!-- Contenu de la section droite -->
+            <!-- carousel fin -->
+            <h2>Service :</h2>
+            <div class="slider">
+
+                <div class="slide-track">
+                    <div class="slide2">
+                        <p>etape1</p>
+                        <img src="img/pose/etape1.jpg" height="200" width="200" alt="" />
+                    </div>
+                    <div class="slide2">
+                        <p>etape2</p>
+                        <img src="img/pose/etape2.jpg" height="200" width="200" alt="" />
+                    </div>
+                    <div class="slide2">
+                        <p>etape3</p>
+                        <img src="img/pose/etape3.jpg" height="200" width="200" alt="" />
+                    </div>
+                    <div class="slide2">
+                        <p>etape4</p>
+                        <img src="img/pose/etape4.jpg" height="200" width="200" alt="" />
+                    </div>
+                    <div class="slide2">
+                        <p>etape5</p>
+                        <img src="img/pose/etape5.jpg" height="200" width="200" alt="" />
+                    </div>
+                    <div class="slide2">
+                        <p>etape6</p>
+                        <img src="img/pose/etape6.jpg" height="200" width="200" alt="" />
+                    </div>
+                    <div class="slide2">
+                        <p>etape7</p>
+                        <img src="img/pose/etape7.jpg" height="200" width="200" alt="" />
+                    </div>
+                    <div class="slide2">
+                        <p>etape8</p>
+                        <img src="img/pose/etape8.jpg" height="200" width="200" alt="" />
+                    </div>
+                    <div class="slide2">
+                        <p>etape9</p>
+                        <img src="img/pose/etape9.jpg" height="200" width="200" alt="" />
+                    </div>
+                    <div class="slide2">
+                        <p>etape10</p>
+                        <img src="img/pose/etape10.jpg" height="200" width="200" alt="" />
+                    </div>
+                    <div class="slide2">
+                        <p>etape11</p>
+                        <img src="img/pose/etape11.jpg" height="200" width="200" alt="" />
+                    </div>
+                    <div class="slide2">
+                        <p>etape12</p>
+                        <img src="img/pose/etape12.jpg" height="200" width="200" alt="" />
+                    </div>
+                    <div class="slide2">
+                        <p>etape13</p>
+                        <img src="img/pose/etape13.jpg" height="200" width="200" alt="" />
+                    </div>
+                    <div class="slide2">
+                        <p>etape14</p>
+                        <img src="img/pose/etape14.jpg" height="200" width="200" alt="" />
+                    </div>
+                </div>
+            </div>
+            <!-- carousel fin -->
+        </aside>
+    </div>
+    <footer>
+        <p>© 2025 StartArtisan Élégance. Tous droits réservés.</p>
+        <p>Contact: info@startartisan-elegance.fr</p>
+    </footer>
+    <script src="scripts.js"></script>
+    <script>
+        // Ajoute des fonctionnalités JavaScript ici si nécessaire
+
+        // Exemple : Afficher une alerte lors du clic sur une carte produit
+        document.addEventListener("DOMContentLoaded", () => {
+            const productCards = document.querySelectorAll(".product-card");
+
+            productCards.forEach((card) => {
+                card.addEventListener("click", () => {
+                    alert(`Vous avez cliqué sur ${card.querySelector("h2").innerText}`);
+                });
+            });
+        });
+    </script>
+    <script>
+        window.onload = function () {
+            setActiveLink();
+        };
+
+        function setActiveLink() {
+            var navbar = document.querySelector('.topnav');
+            var links = navbar.getElementsByTagName('a');
+            var currentUrl = window.location.href;
+
+            for (var i = 0; i < links.length; i++) {
+                if (links[i].href === currentUrl) {
+                    links[i].classList.add('active');
+                } else {
+                    links[i].classList.remove('active');
+                }
+            }
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

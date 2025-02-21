@@ -1,0 +1,72 @@
+.videoyoutube {
+  padding: 2em 0;
+}
+
+.videoyoutube h1 {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 1em;
+  background-color: #f0f0f0;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+
+.videoyoutube p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 1em;
+  background-color: #fafafa;
+  padding: 1em;
+  border-radius: 5px;
+}
+
+.videoyoutube h2 {
+  font-size: 2em;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+  background-color: #e0e0e0;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+
+.videoyoutube ul {
+  list-style-type: disc;
+  padding-left: 1em;
+  background-color: #f9f9f9;
+  padding: 1em;
+  border-radius: 5px;
+}
+
+.videoyoutube ul li {
+  margin-bottom: 0.5em;
+  font-size: 1.2em;
+}
+
+.tutorial-container {
+  text-align: center;
+  background-color: #b6bab6;
+}
+
+select {
+  font-size: 1.5em;
+  padding: 0.5em;
+  margin: 1em 0;
+  border: 1px solid #2196f3;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+  width: 80%;
+  max-width: 800px;
+}
+
+.video-frame {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+iframe {
+  border: 1px solid #06da5b;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tunnel de Vente - Menuiserie Excellence</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #004aad;
+            color: white;
+            padding: 1.5em 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header p {
+            margin: 0.5em 0 0;
+            font-size: 1.2em;
+            font-style: italic;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2em auto;
+            padding: 2em;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .step {
+            margin-bottom: 2em;
+        }
+
+        .step h2 {
+            color: #004aad;
+            margin-bottom: 1em;
+            font-size: 1.5em;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        button {
+            width: 100%;
+            padding: 1em;
+            margin-bottom: 1.5em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #004aad;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #003580;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .recap {
+            background-color: #f0f8ff;
+            padding: 1em;
+            border: 1px solid #004aad;
+            border-radius: 5px;
+            margin-bottom: 1.5em;
+        }
+
+        footer {
+            background-color: #004aad;
+            color: white;
+            text-align: center;
+            padding: 1.5em 0;
+            margin-top: 2em;
+        }
+
+        footer p {
+            margin: 0.5em 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Menuiserie Excellence</h1>
+        <p>"Des solutions sur mesure pour vos fenêtres et portes."</p>
+    </header>
+
+    <div class="container">
+        <!-- Étape 1: Choix du produit ------------------------------------------------------------------>
+        <div id="step1" class="step">
+            <h2>Étape 1 : Choisissez votre produit</h2>
+            <label for="product">Type de produit :</label>
+            <select id="product">
+                <option value="">-- Sélectionnez un produit --</option>
+                <option value="fenetre">Fenêtre</option>
+                <option value="porte">Porte</option>
+            </select>
+            <button onclick="goToStep(2)">Suivant</button>
+        </div>
+
+        <!-- Étape 2: Détails du produit ------------------------------------------------------------------>
+        <div id="step2" class="step hidden">
+            <h2>Étape 2 : Détails du produit</h2>
+
+            <!-- Sélection des dimensions ---------------------------------------------------------------->
+
+            <!-- Sélection du style -->
+            <label for="style">Style :</label>
+            <select id="style">
+                <option value="">-- Sélectionnez un style --</option>
+                <option value="classique">Classique</option>
+                <option value="moderne">Moderne</option>
+                <option value="rustique">Rustique</option>
+            </select>
+
+            <!-- Ajoute d'autres dimensions ici selon besoin -------------------------------------------->
+            <label for="dimensions">Dimensions (en cm) :</label>
+            <select id="dimensions">
+                <option value="">-- Sélectionnez une dimension --</option>
+                <option value="120x120">120x120</option>
+                <option value="120x150">120x150</option>
+                <option value="150x150">150x150</option>
+                <option value="150x200">150x200</option>
+                <option value="200x200">200x200</option>
+                <option value="200x250">200x250</option>
+
+            </select>
+
+
+
+            <button onclick="goToStep(3)">Suivant</button>
+        </div>
+
+
+        <!-- Étape 3: Type d'ouverture ------------------------------------------------------------------->
+        <div id="step3" class="step hidden">
+            <h2>Étape 3 : Type d'ouverture</h2>
+            <label for="ouverture">Type d'ouverture :</label>
+            <select id="ouverture">
+                <option value="">-- Sélectionnez un type d'ouverture --</option>
+                <option value="battante">Battante</option>
+                <option value="coulissante">Coulissante</option>
+                <option value="oscillo-battante">Oscillo-battante</option>
+            </select>
+            <button onclick="goToStep(4)">Suivant</button>
+        </div>
+
+        <!-- Étape 4: Matériau préféré ------------------------------------------------------------------>
+        <div id="step4" class="step hidden">
+            <h2>Étape 4 : Matériau préféré</h2>
+            <label for="material">Matériau :</label>
+            <select id="material">
+                <option value="">-- Sélectionnez un matériau --</option>
+                <option value="bois">Bois</option>
+                <option value="aluminium">Aluminium</option>
+                <option value="pvc">PVC</option>
+            </select>
+            <button onclick="goToStep(5)">Suivant</button>
+        </div>
+
+        <!-- Étape 5: Isolation et Budget ------------------------------------------------------------------>
+        <div id="step5" class="step hidden">
+            <h2>Étape 5 : Isolation et Budget</h2>
+            <label for="isolation">Isolation recherchée :</label>
+            <select id="isolation">
+                <option value="">-- Sélectionnez un niveau d'isolation --</option>
+                <option value="thermique">Thermique</option>
+                <option value="acoustique">Acoustique</option>
+                <option value="les_deux">Les deux</option>
+            </select>
+
+
+            <label for="budget">Budget estimé (en €) :</label>
+            <!--  <input type="number" id="budget" placeholder="Ex : 1500">-->
+            <select id="budget">
+                <option value="">-- Budget estimé (en €)--</option>
+                <option value="1000"> 1000 euros</option>
+                <option value="1500">1500 euros</option>
+                <option value="2000">2000 euros</option>
+                <option value="2500">2500 euros</option>
+            </select>
+
+            <button onclick="goToStep(6)">Suivant</button>
+        </div>
+
+        <!-- Étape 6: Récapitulatif ---------------------------------------------------------------------->
+        <div id="step6" class="step hidden">
+            <h2>Étape 6 : Récapitulatif</h2>
+            <div class="recap" id="recap"></div>
+            <button onclick="goToStep(7)">Demander un devis</button>
+        </div>
+
+        <!-- Étape 7: Remerciements ------------------------------------------------------------------------->
+        <div id="step7" class="step hidden">
+            <h2>Merci pour votre demande !</h2>
+            <p>Nous avons bien reçu votre demande. Nos experts vous contacteront sous peu.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Menuiserie Excellence - Tous droits réservés</p>
+        <p>Contactez-nous : <a href="mailto:contact@menuiserie-excellence.com">contact@menuiserie-excellence.com</a></p>
+        <p>Suivez-nous : <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">LinkedIn</a></p>
+    </footer>
+
+    <script>
+        function goToStep(step) {
+            document.querySelectorAll('.step').forEach(el => el.classList.add('hidden'));
+            document.getElementById(`step${step}`).classList.remove('hidden');
+            if (step === 6) {
+                const recapContent = `
+                Produit : ${document.getElementById('product').value}<br>
+                Dimensions : ${document.getElementById('dimensions').value}<br>
+                Style : ${document.getElementById('style').value}<br>
+                Ouverture : ${document.getElementById('ouverture').value}<br>
+                Matériau : ${document.getElementById('material').value}<br>
+                Isolation : ${document.getElementById('isolation').value}<br>
+                Budget : ${document.getElementById('budget').value} €
+                `;
+                document.getElementById('recap').innerHTML = recapContent;
+            }
+        }
+    </script>
+</body>
+
+</html>
